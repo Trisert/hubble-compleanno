@@ -320,7 +320,20 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const apiKey = process.env.NASA_API_KEY || DEMO_KEY;
+  const apiKey = process.env.NASA_API_KEY
+    ? process.env.NASA_API_KEY
+    : process.env.NODE_ENV === "production"
+      ? null
+      : DEMO_KEY;
+
+  if (!apiKey) {
+    return toHubbleError(
+      503,
+      "NASA_API_KEY non configurata. Imposta la variabile d'ambiente NASA_API_KEY su Vercel (Project Settings → Environment Variables) e ridistribuisci.",
+      "Missing NASA_API_KEY in production"
+    );
+  }
+
   const requestedYear = dateParam.slice(0, 4);
 
   // -----------------------------------------------------------------------
