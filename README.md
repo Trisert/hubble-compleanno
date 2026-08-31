@@ -1,5 +1,7 @@
 # Hubble Compleanno 🎂🔭
 
+[![Deploy with Vercel](https://vercel.com/button.svg)](https://vercel.com/new/clone?repository-url=https://github.com/Trisert/hubble-compleanno&env=NASA_API_KEY&envDescription=NASA%20API%20Key%20da%20https://api.nasa.gov&project-name=hubble-compleanno&repository-name=hubble-compleanno)
+
 Scopri cosa ha fotografato il telescopio Hubble nel giorno del tuo compleanno. Inserisci una data e visualizza l'immagine NASA del giorno corrispondente, con titolo, descrizione e crediti.
 
 > Progetto Next.js (App Router) pensato per il free tier di Vercel. Nessun login, nessun database.
